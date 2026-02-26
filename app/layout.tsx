@@ -3,6 +3,9 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://color-converter.vercel.app'),
+  alternates: {
+    canonical: 'https://color-converter.vercel.app',
+  },
   title: 'Color Converter — HEX to RGB, HSL, CMYK | Free Online Tool',
   description: 'Convert colors between HEX, RGB, HSL, and CMYK formats. Professional color converter with live preview and CSS code generation.',
   keywords: ['color converter', 'hex to rgb', 'rgb to hex', 'hsl converter', 'cmyk converter', 'color picker'],
