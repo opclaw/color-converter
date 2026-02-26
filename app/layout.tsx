@@ -17,11 +17,20 @@ export const metadata: Metadata = {
     siteName: 'Color Converter',
     title: 'Color Converter — HEX to RGB, HSL, CMYK',
     description: 'Convert colors between HEX, RGB, HSL, and CMYK formats.',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Color Converter — HEX, RGB, HSL, CMYK conversion tool',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Color Converter',
     description: 'Convert colors between HEX, RGB, HSL, and CMYK formats.',
+    images: ['/og-image.svg'],
   },
   robots: { index: true, follow: true },
 }
