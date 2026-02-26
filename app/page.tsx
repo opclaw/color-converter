@@ -117,9 +117,23 @@ export default function Home() {
           {/* Color Preview */}
           <div className="mb-8">
             <div 
-              className="w-full h-32 rounded-xl shadow-inner mb-4 transition-colors duration-300"
+              className="w-full h-40 rounded-2xl shadow-lg mb-6 transition-all duration-300 flex items-center justify-center relative overflow-hidden"
               style={{ backgroundColor: color }}
-            />
+            >
+              <span 
+                className="text-6xl font-bold"
+                style={{ 
+                  color: (rgb.r * 0.299 + rgb.g * 0.587 + rgb.b * 0.114) > 186 ? '#1e293b' : '#ffffff'
+                }}
+              >
+                Aa
+              </span>
+              <div className="absolute bottom-3 right-3 text-sm font-medium opacity-60" style={{ 
+                color: (rgb.r * 0.299 + rgb.g * 0.587 + rgb.b * 0.114) > 186 ? '#1e293b' : '#ffffff'
+              }}>
+                {color.toUpperCase()}
+              </div>
+            </div>
             <div className="flex items-center gap-4">
               <div className="flex-1">
                 <label className="block text-sm font-medium text-slate-700 mb-2">HEX Color</label>
@@ -146,17 +160,17 @@ export default function Home() {
           {/* Color Values */}
           <div className="grid sm:grid-cols-2 gap-4">
             {formats.map((format) => (
-              <div key={format.label} className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{format.label}</span>
+              <div key={format.label} className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md hover:border-pink-200 transition-all duration-200">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{format.label}</span>
                   <button
                     onClick={() => copyToClipboard(format.value, format.label)}
-                    className="text-xs font-medium text-indigo-600 hover:text-indigo-700 transition-colors"
+                    className="text-xs font-medium text-pink-600 hover:text-pink-700 transition-colors px-2 py-1 rounded hover:bg-pink-50"
                   >
                     {copied === format.label ? '✓ Copied!' : 'Copy'}
                   </button>
                 </div>
-                <div className="font-mono text-sm text-slate-900 bg-white rounded-lg px-3 py-2 border border-slate-200">
+                <div className="font-mono text-sm text-slate-900 bg-slate-50 rounded-lg px-3 py-2.5 border border-slate-100">
                   {format.value}
                 </div>
               </div>
@@ -164,17 +178,17 @@ export default function Home() {
           </div>
 
           {/* CSS Code */}
-          <div className="mt-6 bg-slate-900 rounded-xl p-4 overflow-x-auto">
+          <div className="mt-8 bg-slate-800 rounded-xl p-5 overflow-x-auto border border-slate-700">
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">CSS Code</span>
               <button
                 onClick={() => copyToClipboard(`color: ${color};`, 'css')}
-                className="text-xs font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
+                className="text-xs font-medium text-slate-300 hover:text-white transition-colors px-3 py-1 rounded-full bg-slate-700 hover:bg-slate-600"
               >
                 {copied === 'css' ? '✓ Copied!' : 'Copy'}
               </button>
             </div>
-            <code className="text-sm text-emerald-400 font-mono">color: {color};</code>
+            <code className="text-sm text-blue-300 font-mono">color: {color};</code>
           </div>
         </div>
       </main>
