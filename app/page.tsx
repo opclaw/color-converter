@@ -87,7 +87,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-2xl shadow-lg">🎨</div>
               <div>
-                <h1 className="text-xl font-bold text-slate-900">Color Converter</h1>
+                <span className="text-xl font-bold text-slate-900">Color Converter</span>
                 <p className="text-sm text-slate-500">HEX, RGB, HSL, CMYK</p>
               </div>
             </div>
